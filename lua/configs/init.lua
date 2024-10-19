@@ -1,0 +1,7 @@
+require("configs.neo-tree")
+require("configs.neoscroll")
+require("configs.lsp")
+require("configs.lualine")
+require("configs.mappings")
+require("configs.telescope")
+require("configs.treesitter")
