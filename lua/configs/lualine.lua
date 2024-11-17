@@ -6,11 +6,8 @@ local lualine = require("lualine")
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = "#202328",
-  fg       = "#bbc2cf",
   yellow   = "#ECBE7B",
   cyan     = "#008080",
-  darkblue = "#081633",
   green    = "#98be65",
   orange   = "#FF8800",
   violet   = "#a9a1e1",
@@ -39,7 +36,7 @@ local config = {
     -- Disable sections and component separators
     component_separators = "",
     section_separators = "",
-    theme = "gruvbox"
+    theme = "gruvbox-material"
   },
   sections = {
     -- these are to remove the defaults
