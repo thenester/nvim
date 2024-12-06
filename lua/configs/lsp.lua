@@ -12,7 +12,8 @@ local servers = {
   "gopls",
   "zls",
   "pbls",
-  "pyright"
+  "pyright",
+  "starpls"
 }
 
 local has_words_before = function()
@@ -48,6 +49,7 @@ lspconfig.lua_ls.setup({
 lspconfig.clangd.setup({})
 lspconfig.zls.setup({})
 lspconfig.pyright.setup({})
+lspconfig.starpls.setup({})
 
 cmp.setup({
   snippet = {
