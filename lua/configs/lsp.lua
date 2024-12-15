@@ -13,7 +13,8 @@ local servers = {
   "zls",
   "pbls",
   "pyright",
-  "starpls"
+  "starpls",
+  "rust_analyzer"
 }
 
 local has_words_before = function()
@@ -50,6 +51,7 @@ lspconfig.clangd.setup({})
 lspconfig.zls.setup({})
 lspconfig.pyright.setup({})
 lspconfig.starpls.setup({})
+lspconfig.rust_analyzer.setup({})
 
 cmp.setup({
   snippet = {
