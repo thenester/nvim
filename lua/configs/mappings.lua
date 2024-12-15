@@ -51,8 +51,8 @@ require("which-key").add({
   { "<ESC>",            [[<C-\><C-n>]],                                                 desc = "Exit from terminal mode",                mode = "t" },
   { "<C-d>",            [[<C-\><C-n>]],                                                 desc = "Exit from terminal mode",                mode = "t" },
   -- Buffer navigation
-  { "<leader>bn",       ":BufferNext<cr>",                                              desc = "Buffer next",                            mode = "n" },
-  { "<leader>bp",       ":BufferPrevious<cr>",                                          desc = "Buffer previous",                        mode = "n" },
+  { "<Tab>",            ":BufferNext<cr>",                                              desc = "Buffer next",                            mode = "n" },
+  { "<S-Tab>",          ":BufferPrevious<cr>",                                          desc = "Buffer previous",                        mode = "n" },
   { "<leader>d",        ":BufferClose<cr>",                                             desc = "Buffer close",                           mode = "n" },
   { "<leader>bP",       ":BufferMovePrevious<cr>",                                      desc = "Buffer move previous",                   mode = "n" },
   { "<leader>bN",       ":BufferMoveNext<cr>",                                          desc = "Buffer move next",                       mode = "n" },
