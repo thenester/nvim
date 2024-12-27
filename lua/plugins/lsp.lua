@@ -14,8 +14,13 @@ return {
     },
   },
   {
+    "saghen/blink.cmp",
+    lazy = false,
+    dependencies = "rafamadriz/friendly-snippets",
+    version = "*"
+  },
+  {
     "neovim/nvim-lspconfig",
-    "hrsh7th/nvim-cmp",
-    "hrsh7th/cmp-nvim-lsp"
-  }
+    dependencies = { "saghen/blink.cmp" },
+  },
 }

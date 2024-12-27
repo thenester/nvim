@@ -1,112 +1,118 @@
-local masonlsp = require("mason-lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local cmp = require("cmp")
 local lspconfig = require("lspconfig")
-local lspkind = require("lspkind")
-local luasnip = require("luasnip")
-local lspconfig_defaults = lspconfig.util.default_config
+local blink = require("blink.cmp")
+local masonlsp = require("mason-lspconfig")
 
 local servers = {
-  "lua_ls",
-  "clangd",
-  "gopls",
-  "zls",
-  "pbls",
-  "pyright",
-  "starpls",
-  "rust_analyzer",
-  "taplo"
+  lua_ls = {
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {
+            "vim"
+          }
+        }
+      }
+    }
+  },
+  clangd = {},
+  gopls = {},
+  zls = {},
+  pbls = {},
+  pyright = {},
+  starpls = {},
+  rust_analyzer = {},
+  taplo = {}
 }
-
-local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
 
 masonlsp.setup({
   lazy = false,
-  ensure_installed = servers,
   opts = {
     auto_install = true,
   }
 })
 
-lspconfig_defaults.capabilities = vim.tbl_deep_extend(
-  "force",
-  lspconfig_defaults.capabilities,
-  capabilities
-)
+blink.setup({
+  keymap = {
+    preset = "enter",
+    ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+    ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+    ["K"] = { "show_documentation" },
+  },
 
-lspconfig.lua_ls.setup({
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = {
-          "vim"
-        }
-      }
+  completion = {
+    keyword = { range = "full" },
+    accept = { auto_brackets = { enabled = false } },
+    list = { selection = "auto_insert" },
+    ghost_text = { enabled = true },
+
+    menu = {
+      auto_show = function()
+        local buftype = vim.api.nvim_buf_get_option(0, "buftype")
+        if buftype == "prompt" then
+          return false
+        end
+        return not vim.api.nvim_win_get_config(0).relative ~= ""
+      end,
+      border = "rounded",
+      draw = { treesitter = { "lsp" } },
+    },
+    documentation = {
+      auto_show = true,
+      auto_show_delay_ms = 500,
+      window = { border = "rounded" }
+    },
+  },
+
+  signature = {
+    enabled = true,
+    window = { border = "rounded" }
+  },
+
+  appearance = {
+    use_nvim_cmp_as_default = true,
+    nerd_font_variant = "normal",
+  },
+
+  sources = {
+    default = { "snippets", "lsp", "path", "buffer" },
+    providers = {
+      lsp = {
+        name = "lsp",
+        enabled = true,
+        module = "blink.cmp.sources.lsp",
+        score_offset = 1000,
+      },
+      snippets = {
+        name = "snippets",
+        enabled = true,
+        module = "blink.cmp.sources.snippets",
+        score_offset = 950,
+      },
+      path = {
+        name = "path",
+        module = "blink.cmp.sources.path",
+        score_offset = 3,
+        fallbacks = { "snippets", "luasnip", "buffer" },
+        opts = {
+          trailing_slash = false,
+          label_trailing_slash = true,
+          get_cwd = function(context)
+            return vim.fn.expand(("#%d:p:h"):format(context.bufnr))
+          end,
+          show_hidden_files_by_default = true,
+        },
+      },
+      buffer = {
+        name = "Buffer",
+        module = "blink.cmp.sources.buffer",
+        min_keyword_length = 2,
+      },
     }
   }
 })
-lspconfig.clangd.setup({})
-lspconfig.zls.setup({})
-lspconfig.pyright.setup({})
-lspconfig.starpls.setup({})
-lspconfig.rust_analyzer.setup({})
-lspconfig.taplo.setup({})
 
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    ["<C-y>"] = cmp.config.disable,
-    ["<C-e>"] = cmp.mapping({
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    }),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
-  },
-  sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-    { name = "path" },
-    { name = "buffer" },
-  }),
-  formatting = {
-    format = lspkind.cmp_format({
-      mode = "symbol",
-      maxwidth = 50,
-      ellipsis_char = "...",
-      show_labelDetails = true,
-      before = function(_, vim_item)
-        return vim_item
-      end
-    })
-  },
-})
+
+for server, config in pairs(servers) do
+  config.capabilities = blink.get_lsp_capabilities(config.capabilities)
+  lspconfig[server].setup(config)
+end

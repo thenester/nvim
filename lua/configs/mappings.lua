@@ -18,7 +18,6 @@ require("which-key").add({
   -- LazyGit
   { "<leader>G",        ":LazyGit<CR>",                                                 desc = "Lazy Git" },
   -- LSP
-  { "K",                vim.lsp.buf.hover,                                              desc = "LSP help" },
   { "<F2>",             vim.lsp.buf.rename,                                             desc = "LSP rename" },
   { "gD",               vim.lsp.buf.declaration,                                        desc = "LSP goto declaration" },
   { "gd",               vim.lsp.buf.definition,                                         desc = "LSP goto definition" },
