@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.cmd("set listchars=space:·")
+vim.cmd("set guicursor+=n:blinkon1")
 
 vim.g.mapleader = " "
 vim.wo.number = true    -- show line numbers
