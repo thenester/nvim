@@ -26,7 +26,9 @@ require("which-key").add({
   { "<leader>fm",       vim.lsp.buf.format,                                             desc = "LSP format file" },
   { "go",               ":ClangdSwitchSourceHeader<CR>",                                desc = "Clangd switch between source and header" },
   -- Essentials
-  { "<leader>r",        ":luafile %",                                                   desc = "Reload current lua file" },
+  { "<leader>x",        ":.lua<CR>",                                                    desc = "Execute current lua line",               mode = "n" },
+  { "<leader>x",        ":lua<CR>",                                                     desc = "Execute current lua selection",          mode = "v" },
+  { "<leader>r",        ":source %",                                                    desc = "Reload current lua file",                mode = "n" },
   { "<C-s>",            ":write<CR>",                                                   desc = "Save current buffer",                    mode = "n" },
   { "<C-x>",            ":exit<CR>",                                                    desc = "Exit",                                   mode = "n" },
   { "<C-k>",            ":wincmd k<CR>",                                                mode = "n" },
