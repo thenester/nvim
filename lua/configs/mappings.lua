@@ -7,6 +7,7 @@ require("which-key").add({
   { "<leader>L",        ":Lazy<CR>",                                                    desc = "Lazy plugins manager",                   mode = "n" },
   -- Telescope
   { "<leader><leader>", ":Telescope find_files<CR>",                                    desc = "Find file",                              mode = "n" },
+  { "<leader>D",        ":Telescope diagnostics<CR>",                                   desc = "LSP diagnostics",                        mode = "n" },
   { "<leader>fw",       ":Telescope live_grep<CR>",                                     desc = "Find word",                              mode = "n" },
   { "<leader>fF",       ":Telescope lsp_document_symbols symbols=function<CR>",         desc = "Find functions",                         mode = "n" },
   { "<leader>b",        ":Telescope buffers<CR>",                                       desc = "Buffers",                                mode = "n" },
