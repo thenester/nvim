@@ -58,6 +58,7 @@ require("which-key").add({
   { "<leader>bn",       ":BufferNext<cr>",                                              desc = "Buffer next",                            mode = "n" },
   { "<S-Tab>",          ":BufferPrevious<cr>",                                          desc = "Buffer previous",                        mode = "n" },
   { "<leader>bp",       ":BufferPrevious<cr>",                                          desc = "Buffer previous",                        mode = "n" },
+  { "<leader>bb",       ":tabnew<cr>",                                                  desc = "New tab with a buffer",                  mode = "n" },
   { "<leader>bd",       ":BufferClose<cr>",                                             desc = "Buffer close",                           mode = "n" },
   { "<leader>bq",       ":BufferClose<cr>",                                             desc = "Buffer close",                           mode = "n" },
   { "<leader>bk",       ":BufferClose<cr>",                                             desc = "Buffer close",                           mode = "n" },
