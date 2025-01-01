@@ -48,6 +48,10 @@ wk.add({
   { "<leader>ds", ":lua require('dap').step_into()<CR>", desc = "Step into", icon = ""},
   { "<leader>dn", ":lua require('dap').step_over()<CR>", desc = "Step over", icon = "" },
   { "<leader>dO", ":lua require('dap').step_out()<CR>", desc = "Step out", icon = "" },
+  -- Windows
+  { "<leader>w", group = "Windows", icon = "" },
+  { "<leader>wh", ":split<CR>", desc = "Horizontal split", mode = "n" },
+  { "<leader>wv", ":vsplit<CR>", desc = "Vertical split", mode = "n" },
   -- Essentials
   { "<leader>x", ":.lua<CR>", desc = "Execute current lua line", mode = "n", icon = "" },
   { "<leader>x", ":lua<CR>", desc = "Execute current lua selection", mode = "v", icon = "" },
@@ -59,8 +63,6 @@ wk.add({
   { "<C-j>", ":wincmd j<CR>", mode = "n" },
   { "<C-h>", ":wincmd h<CR>", mode = "n" },
   { "<C-l>", ":wincmd l<CR>", mode = "n" },
-  { "<leader>h", ":split<CR>", desc = "Window horizontal split", mode = "n" },
-  { "<leader>v", ":vsplit<CR>", desc = "Window vertical split", mode = "n" },
   { "<C-h>", "<Left>", mode = "i" },
   { "<C-l>", "<Right>", mode = "i" },
   { "<C-k>", "<Up>", mode = "i" },
