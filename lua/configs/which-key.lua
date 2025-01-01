@@ -53,6 +53,7 @@ wk.add({
   { "<leader>x", ":lua<CR>", desc = "Execute current lua selection", mode = "v", icon = "" },
   { "<leader>r", ":source %", desc = "Reload current lua file", mode = "n", icon = "" },
   { "<C-s>", ":write<CR>", desc = "Save current buffer", mode = "n" },
+  { "<C-s>", "<C-\\><C-o>:w<CR>", desc = "Save current buffer", mode = "i" },
   { "<C-x>", ":exit<CR>", desc = "Exit", mode = "n" },
   { "<C-k>", ":wincmd k<CR>", mode = "n" },
   { "<C-j>", ":wincmd j<CR>", mode = "n" },
