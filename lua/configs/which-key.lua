@@ -37,6 +37,17 @@ wk.add({
   { "ca", vim.lsp.buf.code_action, desc = "LSP code action" },
   { "<leader>fm", vim.lsp.buf.format, desc = "LSP format file" },
   { "go", ":ClangdSwitchSourceHeader<CR>", desc = "Clangd switch between source and header" },
+  -- DAP
+  { "<leader>d", group = "Debug", icon = "󰯆" },
+  { "<leader>d<Tab>", ":lua require('dap').toggle_breakpoint()<CR>", desc = "Toggle breakpoint", icon = "" },
+  { "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>", desc = "Toggle breakpoint", icon = "" },
+  { "<leader>dC", ":lua require('dap').clear_breakpoints()<CR>", desc = "Clear breakpoint", icon = "" },
+  { "<leader>d<Enter>", ":lua require('dap').continue()<CR>", desc = "Run or continue", icon = "" },
+  { "<leader>dD", ":lua require('dap').terminate()<CR>", desc = "Terminate session", icon = "" },
+  { "<leader>dc", ":lua require('dap').continue()<CR>", desc = "Continue", icon = "" },
+  { "<leader>ds", ":lua require('dap').step_into()<CR>", desc = "Step into", icon = ""},
+  { "<leader>dn", ":lua require('dap').step_over()<CR>", desc = "Step over", icon = "" },
+  { "<leader>dO", ":lua require('dap').step_out()<CR>", desc = "Step out", icon = "" },
   -- Essentials
   { "<leader>x", ":.lua<CR>", desc = "Execute current lua line", mode = "n", icon = "" },
   { "<leader>x", ":lua<CR>", desc = "Execute current lua selection", mode = "v", icon = "" },

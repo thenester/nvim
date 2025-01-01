@@ -1,6 +1,7 @@
 require("configs.neo-tree")
 require("configs.neoscroll")
 require("configs.lsp")
+require("configs.dap")
 require("configs.lualine")
 require("configs.which-key")
 require("configs.telescope")

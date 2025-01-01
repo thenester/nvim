@@ -13,8 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.cmd("set listchars=space:·")
 vim.cmd("set guicursor+=n:blinkon1")
-vim.api.nvim_set_hl(0, 'Visual', { bg = '#2e3440', fg = 'NONE', bold = true })
-vim.api.nvim_set_hl(0, 'VisualNC', { bg = '#3b4252', fg = 'NONE', italic = true })
 vim.g.mapleader = " "
 vim.wo.number = true    -- show line numbers
 vim.opt.swapfile = false
