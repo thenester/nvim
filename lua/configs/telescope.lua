@@ -7,6 +7,11 @@ require("telescope").setup({
     ["recent_files"] = {
       only_cwd = true
     }
+  },
+  pickers = {
+    colorscheme = {
+      enable_preview = true
+    }
   }
 })
 
