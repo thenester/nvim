@@ -15,5 +15,13 @@ return {
   {
     "vague2k/vague.nvim",
     priority = 1000,
+    config = function()
+      require("vague").setup({
+        colors = {
+          bg = "#25282d",
+          line = "#1f2124",
+        }
+      })
+    end
   }
 }
