@@ -23,3 +23,6 @@ vim.opt.signcolumn = "yes"
 
 require("lazy").setup("plugins")
 require("configs")
+
+-- Set the theme
+vim.cmd("colorscheme vague")
