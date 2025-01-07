@@ -25,4 +25,4 @@ require("lazy").setup("plugins")
 require("configs")
 
 -- Set the theme
-vim.cmd("colorscheme vague")
+vim.cmd("colorscheme tokyonight-moon")
