@@ -64,6 +64,8 @@ wk.add({
   { "<C-j>", ":wincmd j<CR>", mode = "n" },
   { "<C-h>", ":wincmd h<CR>", mode = "n" },
   { "<C-l>", ":wincmd l<CR>", mode = "n" },
+  {"]d", ":lua vim.diagnostic.goto_next()<CR>", desc="Next LSP diagnostics", mode="n"},
+  {"[d", ":lua vim.diagnostic.goto_prev()<CR>", desc="Previous LSP diagnostics", mode="n"},
   { "<C-h>", "<Left>", mode = "i" },
   { "<C-l>", "<Right>", mode = "i" },
   { "<C-k>", "<Up>", mode = "i" },
