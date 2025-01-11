@@ -4,7 +4,7 @@ return {
   opts = {
     enabled = true,
     message_template = " <summary> • <author> • <date> • <<sha>>",
-    date_format = "%m-%d-%Y %H:%M:%S",
+    date_format = "%m-%d-%Y",
     virtual_text_column = 1,
   },
 }
