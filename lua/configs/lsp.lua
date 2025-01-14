@@ -40,9 +40,9 @@ blink.setup({
   },
 
   completion = {
+    trigger = { show_on_trigger_character = true },
     keyword = { range = "full" },
     accept = { auto_brackets = { enabled = false } },
-    list = { selection = "auto_insert" },
     ghost_text = { enabled = true },
 
     menu = {
