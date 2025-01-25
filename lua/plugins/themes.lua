@@ -13,6 +13,10 @@ return {
     priority = 1000,
   },
   {
+    "projekt0n/github-nvim-theme",
+    priority = 1000
+  },
+  {
     "vague2k/vague.nvim",
     priority = 1000,
     opts = {
