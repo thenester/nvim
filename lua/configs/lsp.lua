@@ -21,7 +21,8 @@ local servers = {
   pyright = {},
   starpls = {},
   rust_analyzer = {},
-  taplo = {}
+  taplo = {},
+  cssls = {}
 }
 
 masonlsp.setup({
