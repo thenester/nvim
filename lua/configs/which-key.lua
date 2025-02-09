@@ -21,7 +21,7 @@ wk.add({
   { "<leader>n", group = "Neovim", icon = "" },
   { "<leader>nh", ":Telescope help_tags<CR>", desc = "Find help", mode = "n" },
   { "<leader>nt", ":Telescope colorscheme<CR>", desc = "Themes", mode = "n" },
-  { "<leader>nm", ":map<CR>", desc = "Show keys", mode = "n" },
+  { "<leader>nk", ":map<CR>", desc = "Show keys", mode = "n" },
   -- Mason
   { "<leader>M", ":Mason<CR>", desc = "Mason", mode = "n", icon = "" },
   -- LazyGit
