@@ -22,7 +22,8 @@ local servers = {
   starpls = {},
   rust_analyzer = {},
   taplo = {},
-  cssls = {}
+  cssls = {},
+  c3_lsp = {}
 }
 
 masonlsp.setup({
