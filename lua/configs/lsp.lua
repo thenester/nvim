@@ -73,7 +73,7 @@ blink.setup({
 
   signature = {
     enabled = true,
-    window = { border = "rounded" }
+    window = { border = "rounded", show_documentation = true }
   },
 
   appearance = {
