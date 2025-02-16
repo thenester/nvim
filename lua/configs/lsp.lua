@@ -28,9 +28,7 @@ local servers = {
 
 masonlsp.setup({
   lazy = false,
-  opts = {
-    auto_install = true,
-  }
+  automatic_installation = true,
 })
 
 blink.setup({
