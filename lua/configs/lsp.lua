@@ -54,7 +54,13 @@ blink.setup({
         return not vim.api.nvim_win_get_config(0).relative ~= ""
       end,
       border = "rounded",
-      draw = { treesitter = { "lsp" } },
+      draw = {
+        treesitter = { "lsp" },
+        columns = {
+          { "label",     "label_description", gap = 1 },
+          { "kind_icon", "kind",              gap = 1, "source_name" },
+        }
+      },
     },
     documentation = {
       auto_show = true,
