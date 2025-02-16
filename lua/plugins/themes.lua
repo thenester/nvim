@@ -8,6 +8,14 @@ return {
     priority = 1000,
   },
   {
+    "sainnhe/gruvbox-material",
+    priority = 1000,
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
@@ -20,10 +28,10 @@ return {
     "vague2k/vague.nvim",
     priority = 1000,
     opts = {
-        colors = {
-          bg = "#25282d",
-          line = "#1f2124",
-        }
+      colors = {
+        bg = "#25282d",
+        line = "#1f2124",
+      }
     }
   }
 }
