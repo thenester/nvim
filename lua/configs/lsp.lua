@@ -46,9 +46,11 @@ blink.setup({
     ghost_text = { enabled = true },
 
     menu = {
-      auto_show = function()
+      auto_show = function(ctx)
         local buftype = vim.api.nvim_buf_get_option(0, "buftype")
-        if buftype == "prompt" then
+        -- Skip for command line and prompts
+        if buftype == "prompt" or
+            ctx.mode == "cmdline" then
           return false
         end
         return not vim.api.nvim_win_get_config(0).relative ~= ""
