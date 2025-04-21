@@ -59,7 +59,7 @@ wk.add({
   { "<leader>r", ":source %<CR>", desc = "Reload current lua file", mode = "n", icon = "" },
   { "<C-s>", ":write<CR>", desc = "Save current buffer", mode = "n" },
   { "<C-s>", "<C-\\><C-o>:w<CR>", desc = "Save current buffer", mode = "i" },
-  { "<C-x>", ":exit<CR>", desc = "Exit", mode = "n" },
+  { "<C-S-s>", ":wq<CR>", desc = "Exit", mode = "n" },
   { "<C-k>", ":wincmd k<CR>", mode = "n" },
   { "<C-j>", ":wincmd j<CR>", mode = "n" },
   { "<C-h>", ":wincmd h<CR>", mode = "n" },
