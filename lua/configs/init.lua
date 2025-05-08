@@ -1,3 +1,4 @@
+require("configs.lazy")
 require("configs.neo-tree")
 require("configs.neoscroll")
 require("configs.lsp")
