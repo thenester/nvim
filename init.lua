@@ -10,6 +10,8 @@ vim.o.cursorline = true -- enable cursorline
 vim.o.scrolloff = 999   -- keep the cursor in the middle
 vim.opt.signcolumn = "yes"
 
+vim.diagnostic.config({ virtual_text = { current_line = true } })
+
 require("configs")
 
 -- Set the theme
