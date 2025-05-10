@@ -46,7 +46,7 @@ wk.add({
   { "<leader>d<Enter>", ":lua require('dap').continue()<CR>", desc = "Run or continue", icon = "" },
   { "<leader>dD", ":lua require('dap').terminate()<CR>", desc = "Terminate session", icon = "" },
   { "<leader>dc", ":lua require('dap').continue()<CR>", desc = "Continue", icon = "" },
-  { "<leader>ds", ":lua require('dap').step_into()<CR>", desc = "Step into", icon = ""},
+  { "<leader>ds", ":lua require('dap').step_into()<CR>", desc = "Step into", icon = "" },
   { "<leader>dn", ":lua require('dap').step_over()<CR>", desc = "Step over", icon = "" },
   { "<leader>dO", ":lua require('dap').step_out()<CR>", desc = "Step out", icon = "" },
   -- Windows
@@ -64,8 +64,8 @@ wk.add({
   { "<C-j>", ":wincmd j<CR>", mode = "n" },
   { "<C-h>", ":wincmd h<CR>", mode = "n" },
   { "<C-l>", ":wincmd l<CR>", mode = "n" },
-  {"]d", ":lua vim.diagnostic.goto_next()<CR>", desc="Next LSP diagnostics", mode="n"},
-  {"[d", ":lua vim.diagnostic.goto_prev()<CR>", desc="Previous LSP diagnostics", mode="n"},
+  { "]d", ":lua vim.diagnostic.goto_next()<CR>", desc = "Next LSP diagnostics", mode = "n" },
+  { "[d", ":lua vim.diagnostic.goto_prev()<CR>", desc = "Previous LSP diagnostics", mode = "n" },
   { "<C-h>", "<Left>", mode = "i" },
   { "<C-l>", "<Right>", mode = "i" },
   { "<C-k>", "<Up>", mode = "i" },
@@ -102,4 +102,12 @@ wk.add({
   { "<leader>b9", ":BufferGoto 9<cr>", desc = "Buffer goto 9", mode = "n" },
   -- Flash search within the buffer
   { "<C-f>", function() require("flash").jump() end, desc = "Flash search", mode = "n" },
+  -- Touble keymaps
+  { "<leader>D", group = "Diagnostics", icon=""},
+  { "<leader>Dx", ":Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)", },
+  { "<leader>Db", ":Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)", },
+  { "<leader>Ds", ":Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)", },
+  { "<leader>Dl", ":Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)", },
+  { "<leader>DL", ":Trouble loclist toggle<cr>", desc = "Location List (Trouble)", },
+  { "<leader>DQ", ":Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)", },
 })
