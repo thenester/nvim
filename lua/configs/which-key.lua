@@ -34,7 +34,7 @@ wk.add({
   { "<F2>", vim.lsp.buf.rename, desc = "LSP rename" },
   { "gD", vim.lsp.buf.declaration, desc = "LSP goto declaration" },
   { "gd", vim.lsp.buf.definition, desc = "LSP goto definition" },
-  { "gr", vim.lsp.buf.references, desc = "LSP references" },
+  { "gr", require('telescope.builtin').lsp_references, desc = "LSP references" },
   { "ca", vim.lsp.buf.code_action, desc = "LSP code action" },
   { "<leader>fm", vim.lsp.buf.format, desc = "LSP format file" },
   { "go", ":ClangdSwitchSourceHeader<CR>", desc = "Clangd switch between source and header" },
@@ -103,7 +103,7 @@ wk.add({
   -- Flash search within the buffer
   { "<C-f>", function() require("flash").jump() end, desc = "Flash search", mode = "n" },
   -- Touble keymaps
-  { "<leader>D", group = "Diagnostics", icon=""},
+  { "<leader>D", group = "Diagnostics", icon = "" },
   { "<leader>Dx", ":Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)", },
   { "<leader>Db", ":Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)", },
   { "<leader>Ds", ":Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)", },
