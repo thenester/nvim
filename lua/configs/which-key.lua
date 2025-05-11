@@ -77,8 +77,8 @@ wk.add({
   { "<leader>/", ":nohlsearch<CR>", mode = "n", hidden = true },
   { "<leader>nc", ":checkhealth<CR>", desc = "Check health", mode = "n" },
   { ";", ":", desc = "CMD enter command mode", mode = "n" },
-  { "<ESC>", [[<C-\><C-n>]], desc = "Exit from terminal mode", mode = "t" },
-  { "<C-d>", [[<C-\><C-n>]], desc = "Exit from terminal mode", mode = "t" },
+  -- Exit from lazygit with Esc
+  { "<Esc>", [[<C-\><C-n>:close<CR>]], mode = "t"},
   -- Buffer navigation
   { "<leader>b", group = "Buffers" },
   { "<Tab>", ":BufferNext<cr>", desc = "Buffer next", mode = "n" },
