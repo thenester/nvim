@@ -19,17 +19,17 @@ dap.listeners.before.event_exited.dapui_config = function()
 end
 
 -- Adaptors
-dap.adapters.codelldb = {
+dap.adapters.gdb = {
   type = "executable",
-  command = "/usr/bin/codelldb",
-  name = "codelldb"
+  command = "gdb",
+  args = { "-i", "dap" },
 }
 
 -- Configurations
 local config = {
   {
     name = "Launch",
-    type = "codelldb",
+    type = "gdb",
     request = "launch",
     program = function()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
