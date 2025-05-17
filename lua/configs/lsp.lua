@@ -17,11 +17,10 @@ local servers = {
   clangd = {},
   gopls = {},
   zls = {},
-  pbls = {},
   pylyzer = {},
-  starpls = {},
   rust_analyzer = {},
-  taplo = {},
+  cmake = {},
+  autotools_ls = {},
 }
 
 masonlsp.setup({
