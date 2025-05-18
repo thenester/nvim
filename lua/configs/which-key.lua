@@ -10,6 +10,7 @@ wk.add({
   -- FzfLua
   { "<leader>f", group = "Fzf" },
   { "<leader><leader>", ":FzfLua files<CR>", desc = "Find file", mode = "n" },
+  { "<leader>fr", ":FzfLua oldfiles<CR>", desc = "Recent files", mode = "n" },
   { "<leader>fd", ":FzfLua diagnostics_document<CR>", desc = "LSP document diagnostics", mode = "n" },
   { "<leader>fD", ":FzfLua diagnostics_workspace<CR>", desc = "LSP workspace diagnostics", mode = "n" },
   { "<leader>fc", ":FzfLua commands<CR>", desc = "Find command", mode = "n" },
