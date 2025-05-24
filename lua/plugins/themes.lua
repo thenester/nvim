@@ -6,9 +6,9 @@ return {
   {
     "folke/tokyonight.nvim",
     priority = 1000,
-    opts = {
-      transparent = true
-    }
+    -- opts = {
+    --   transparent = true
+    -- }
   },
   {
     "sainnhe/gruvbox-material",
@@ -22,9 +22,9 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
-    opts = {
-      transparent_background = true
-    }
+    -- opts = {
+    --   transparent_background = true
+    -- }
   },
   {
     "projekt0n/github-nvim-theme",
