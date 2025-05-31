@@ -40,7 +40,7 @@ wk.add({
   { "go", ":ClangdSwitchSourceHeader<CR>", desc = "Clangd switch between source and header" },
   -- DAP
   { "<leader>d", group = "Debug", icon = "󰯆" },
-  { "<leader>d<Tab>", ":lua require('dap').toggle_breakpoint()<CR>", desc = "Toggle breakpoint", icon = "" },
+  { "<leader>d<Tab>", ":lua require('dapui').toggle()<CR>", desc = "Toggle UI", icon = "" },
   { "<leader>db", ":lua require('dap').toggle_breakpoint()<CR>", desc = "Toggle breakpoint", icon = "" },
   { "<leader>dC", ":lua require('dap').clear_breakpoints()<CR>", desc = "Clear breakpoint", icon = "" },
   { "<leader>d<Enter>", ":lua require('dap').continue()<CR>", desc = "Run or continue", icon = "" },
