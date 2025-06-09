@@ -10,13 +10,14 @@ wk.add({
   -- Telescope
   { "<leader>f", group = "Telescope" },
   { "<leader><leader>", ":Telescope find_files<CR>", desc = "Find file", mode = "n" },
+  { "<leader>fh", ":Telescope builtin<CR>", desc = "Telescope show pickers" },
   { "<leader>fD", ":Telescope diagnostics<CR>", desc = "LSP diagnostics", mode = "n" },
   { "<leader>fc", ":Telescope commands<CR>", desc = "Find command", mode = "n" },
   { "<leader>fw", ":Telescope live_grep<CR>", desc = "Find word", mode = "n" },
   { "<leader>fF", ":Telescope lsp_document_symbols symbols=function<CR>", desc = "Find function", mode = "n" },
   { "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers", mode = "n" },
   { "<leader>fs", ":Telescope lsp_document_symbols<CR>", desc = "LSP symbols" },
-  { "<leader>fr", ":lua require('telescope').extensions.recent_files.pick()<CR>", desc = "Recent files", mode = "n" },
+  { "<leader>fR", ":lua require('telescope').extensions.recent_files.pick()<CR>", desc = "Recent files", mode = "n" },
   -- Neovim
   { "<leader>n", group = "Neovim", icon = "" },
   { "<leader>nh", ":Telescope help_tags<CR>", desc = "Find help", mode = "n" },
@@ -31,13 +32,14 @@ wk.add({
   { "<leader>ot", ":terminal<cr>", desc = "Open terminal in a new buffer", mode = "n" },
   { "<leader>of", ":FloatermToggle<cr>", desc = "Toggle floating terminal" },
   -- LSP
-  { "<F2>", vim.lsp.buf.rename, desc = "LSP rename" },
-  { "gD", vim.lsp.buf.declaration, desc = "LSP goto declaration" },
-  { "gd", vim.lsp.buf.definition, desc = "LSP goto definition" },
-  { "gr", require('telescope.builtin').lsp_references, desc = "LSP references" },
-  { "ca", vim.lsp.buf.code_action, desc = "LSP code action" },
-  { "<leader>fm", vim.lsp.buf.format, desc = "LSP format file" },
+  { "gd", ":Telescope lsp_definitions<CR>", desc = "LSP goto definition" },
+  { "gr", ":Telescope lsp_references<CR>", desc = "LSP references" },
+  { "gO", ":Telescope lsp_outgoing_calls <CR>", desc = "LSP outgoing calls" },
+  { "gI", ":Telescope lsp_incoming_calls<CR>", desc = "LSP incoming calls" },
   { "go", ":ClangdSwitchSourceHeader<CR>", desc = "Clangd switch between source and header" },
+  { "<F2>", vim.lsp.buf.rename, desc = "LSP rename" },
+  { "ca", vim.lsp.buf.code_action, desc = "LSP code actions" },
+  { "<leader>fm", vim.lsp.buf.format, desc = "LSP format file" },
   -- DAP
   { "<leader>d", group = "Debug", icon = "󰯆" },
   { "<leader>d<Tab>", ":lua require('dapui').toggle()<CR>", desc = "Toggle UI", icon = "" },
@@ -54,6 +56,7 @@ wk.add({
   { "<leader>wh", ":split<CR>", desc = "Horizontal split", mode = "n" },
   { "<leader>wv", ":vsplit<CR>", desc = "Vertical split", mode = "n" },
   -- Essentials
+  { "<ESC>", [[<C-\><C-n>:close<CR>]], mode = "t" }, -- Exit from lazygit with Esc
   { "<leader>x", ":.lua<CR>", desc = "Execute current lua line", mode = "n", icon = "" },
   { "<leader>x", ":lua<CR>", desc = "Execute current lua selection", mode = "v", icon = "" },
   { "<leader>r", ":source %<CR>", desc = "Reload current lua file", mode = "n", icon = "" },
@@ -77,8 +80,6 @@ wk.add({
   { "<leader>/", ":nohlsearch<CR>", mode = "n", hidden = true },
   { "<leader>nc", ":checkhealth<CR>", desc = "Check health", mode = "n" },
   { ";", ":", desc = "CMD enter command mode", mode = "n" },
-  -- Exit from lazygit with Esc
-  { "<Esc>", [[<C-\><C-n>:close<CR>]], mode = "t"},
   -- Buffer navigation
   { "<leader>b", group = "Buffers" },
   { "<Tab>", ":BufferNext<cr>", desc = "Buffer next", mode = "n" },
