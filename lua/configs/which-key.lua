@@ -80,6 +80,14 @@ wk.add({
   { "<leader>/", ":nohlsearch<CR>", mode = "n", hidden = true },
   { "<leader>nc", ":checkhealth<CR>", desc = "Check health", mode = "n" },
   { ";", ":", desc = "CMD enter command mode", mode = "n" },
+  -- Move lines up/down
+  { "<A-j>", ":m .+1<CR>==", desc = "Move line down", mode = "n" },
+  { "<A-k>", ":m .-2<CR>==", desc = "Move line up", mode = "n" },
+  { "<A-j>", ":m '>+1<CR>gv=gv", desc = "Move selection down", mode = "v" },
+  { "<A-k>", ":m '<-2<CR>gv=gv", desc = "Move selection up", mode = "v" },
+  -- Indenting in visual mode
+  { "<", "<gv", desc = "Indent left" },
+  { ">", ">gv", desc = "Indent right" },
   -- Buffer navigation
   { "<leader>b", group = "Buffers" },
   { "<Tab>", ":BufferNext<cr>", desc = "Buffer next", mode = "n" },
