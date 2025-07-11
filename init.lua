@@ -9,6 +9,15 @@ vim.o.list = true       -- render whitespaces
 vim.o.cursorline = true -- enable cursorline
 vim.o.scrolloff = 999   -- keep the cursor in the middle
 vim.opt.signcolumn = "yes"
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+vim.opt.showmatch = true
+vim.opt.autoread = true
+vim.opt.clipboard:append("unnamedplus") -- system clipboard
 
 vim.diagnostic.config({ virtual_text = { current_line = true } })
 
