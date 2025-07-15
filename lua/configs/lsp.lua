@@ -21,6 +21,8 @@ local servers = {
   rust_analyzer = {},
   cmake = {},
   autotools_ls = {},
+  dockerls = {},
+  bashls = {},
   jinja_lsp = {}
 }
 
