@@ -13,10 +13,11 @@ wk.add({
 	{ "<leader>fh", ":Telescope builtin<CR>", desc = "Telescope show pickers" },
 	{ "<leader>fD", ":Telescope diagnostics<CR>", desc = "LSP diagnostics", mode = "n" },
 	{ "<leader>fc", ":Telescope commands<CR>", desc = "Find command", mode = "n" },
+	{ "<leader>ff", ":Telescope live_grep<CR>", desc = "Fuzzy find", mode = "n" },
 	{
 		"<leader>fw",
-		":lua require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>'), grep_open_files = true, word_match = '-w' })<CR>",
-		desc = "Find under cursor within buffer",
+		":lua require('telescope.builtin').grep_string({ grep_open_files = true })<CR>",
+		desc = "Find under cursor",
 		mode = "n",
 	},
 	{ "<leader>fW", ":lua require('telescope.builtin').grep_string()<CR>", desc = "Find under cursor", mode = "n" },
