@@ -1,22 +1,23 @@
 -- General settings
-vim.cmd("set listchars=space:·")
-vim.cmd("set guicursor+=n:blinkon1")
 vim.g.mapleader = " "
-vim.wo.number = true    -- show line numbers
-vim.wo.rnu = true       -- relative numbers
-vim.opt.swapfile = false
+vim.o.number = true     -- show line numbers
+vim.o.rnu = true        -- relative numbers
+vim.o.swapfile = false
 vim.o.list = true       -- render whitespaces
 vim.o.cursorline = true -- enable cursorline
 vim.o.scrolloff = 999   -- keep the cursor in the middle
-vim.opt.signcolumn = "yes"
-vim.opt.smartindent = true
-vim.opt.autoindent = true
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.incsearch = true
-vim.opt.termguicolors = true
-vim.opt.showmatch = true
-vim.opt.autoread = true
+vim.o.signcolumn = "yes"
+vim.o.smartindent = true
+vim.o.autoindent = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.incsearch = true
+vim.o.termguicolors = true
+vim.o.showmatch = true
+vim.o.autoread = true
+vim.o.winborder = "rounded"
+vim.o.undofile = true
+vim.opt.listchars:append { space = "·" }
 vim.opt.clipboard:append("unnamedplus") -- system clipboard
 
 vim.diagnostic.config({ virtual_text = { current_line = true } })
