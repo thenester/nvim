@@ -1,3 +1,4 @@
+require("configs.autocmd")
 require("configs.lazy")
 require("configs.neo-tree")
 require("configs.neoscroll")
