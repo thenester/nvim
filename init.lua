@@ -25,4 +25,4 @@ vim.diagnostic.config({ virtual_text = { current_line = true } })
 require("configs")
 
 -- Set the theme
-vim.cmd("colorscheme catppuccin-mocha")
+vim.cmd("colorscheme gruvbox-material")
