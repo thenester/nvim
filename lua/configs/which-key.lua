@@ -59,9 +59,12 @@ wk.add({
 	{ "<leader>dn", ":lua require('dap').step_over()<CR>", desc = "Step over", icon = "" },
 	{ "<leader>dO", ":lua require('dap').step_out()<CR>", desc = "Step out", icon = "" },
 	-- Windows
-	{ "<leader>w", group = "Windows", icon = "" },
-	{ "<leader>wh", ":split<CR>", desc = "Horizontal split", mode = "n" },
-	{ "<leader>wv", ":vsplit<CR>", desc = "Vertical split", mode = "n" },
+	{ "<leader>-", ":split<CR>", desc = "Horizontal split", mode = "n" },
+	{ "<leader>\\", ":vsplit<CR>", desc = "Vertical split", mode = "n" },
+	{ "<C-Right>", ":vertical resize +1<CR>", desc = "Increase split vertically", mode = "n" },
+	{ "<C-Left>", ":vertical resize -1<CR>", desc = "Decrease split vertically", mode = "n" },
+	{ "<C-Down>", ":resize +1<CR>", desc = "Increase split horizontally", mode = "n" },
+	{ "<C-Up>", ":resize -1<CR>", desc = "Decrease split horizontally", mode = "n" },
 	-- Essentials
 	{ "<ESC>", [[<C-\><C-n>:close<CR>]], mode = "t" }, -- Exit from lazygit with Esc
 	{ "<leader>x", ":.lua<CR>", desc = "Execute current lua line", mode = "n", icon = "" },
