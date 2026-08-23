@@ -13,14 +13,13 @@ wk.add({
 	{ "<leader>fh", ":Telescope builtin<CR>", desc = "Telescope show pickers" },
 	{ "<leader>fD", ":Telescope diagnostics<CR>", desc = "LSP diagnostics", mode = "n" },
 	{ "<leader>fc", ":Telescope commands<CR>", desc = "Find command", mode = "n" },
-	{ "<leader>ff", ":Telescope live_grep<CR>", desc = "Fuzzy find", mode = "n" },
 	{
-		"<leader>fw",
+		"<leader>fW",
 		":lua require('telescope.builtin').grep_string({ grep_open_files = true })<CR>",
-		desc = "Find under cursor",
+		desc = "Find under cursor within buffer",
 		mode = "n",
 	},
-	{ "<leader>fW", ":lua require('telescope.builtin').grep_string()<CR>", desc = "Find under cursor", mode = "n" },
+	{ "<leader>fw", ":lua require('telescope.builtin').grep_string()<CR>", desc = "Find under cursor", mode = "n" },
 	{ "<leader>ff", ":Telescope current_buffer_fuzzy_find<CR>", desc = "Fuzzy find within buffer", mode = "n" },
 	{ "<leader>fF", ":Telescope live_grep<CR>", desc = "Fuzzy find", mode = "n" },
 	{ "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers", mode = "n" },
@@ -35,10 +34,15 @@ wk.add({
 	{ "<leader>M", ":Mason<CR>", desc = "Mason", mode = "n", icon = "" },
 	-- LazyGit
 	{ "<leader>G", ":LazyGit<CR>", desc = "Lazy Git" },
+	-- Git
+	{ "<leader>g", group = "Git" },
+	{ "<leader>gc", ":GitConflictListQf<CR>", desc = "Git conflicts" },
+	{ "<leader>gp", ":Gitsigns prev_hunk<CR>", desc = "Git previous hunk" },
+	{ "<leader>gn", ":Gitsigns next_hunk<CR>", desc = "Git next hunk" },
 	-- Terminal
-	{ "<leader>o", group = "Terminal" },
-	{ "<leader>ot", ":terminal<cr>", desc = "Open terminal in a new buffer", mode = "n" },
-	{ "<leader>of", ":FloatermToggle<cr>", desc = "Toggle floating terminal" },
+	{ "<leader>t", group = "Terminal" },
+	{ "<leader>tt", ":terminal<cr>", desc = "Open terminal in a new buffer", mode = "n" },
+	{ "<leader>tf", ":FloatermToggle<cr>", desc = "Toggle floating terminal" },
 	-- LSP
 	{ "gd", ":Telescope lsp_definitions<CR>", desc = "LSP goto definition" },
 	{ "gr", ":Telescope lsp_references<CR>", desc = "LSP references" },
@@ -47,7 +51,7 @@ wk.add({
 	{ "go", ":ClangdSwitchSourceHeader<CR>", desc = "Clangd switch between source and header" },
 	{ "<F2>", vim.lsp.buf.rename, desc = "LSP rename" },
 	{ "ca", vim.lsp.buf.code_action, desc = "LSP code actions" },
-	{ "<leader>fm", vim.lsp.buf.format, desc = "LSP format file" },
+	{ "<leader>fm", vim.lsp.buf.format, desc = "LSP format file", mode = "nv" },
 	-- DAP
 	{ "<leader>d", group = "Debug", icon = "󰯆" },
 	{ "<leader>d<Tab>", ":lua require('dapui').toggle()<CR>", desc = "Toggle UI", icon = "" },
@@ -129,6 +133,15 @@ wk.add({
 		desc = "Flash search",
 		mode = "n",
 	},
+	-- Yang file path
+	{
+		"<leader>fy",
+		function()
+			vim.fn.setreg("+", vim.fn.expand("%:p"))
+			print("Yanked file path: " .. vim.fn.expand("%:p"))
+		end,
+		desc = "Yank file path",
+	},
 	-- Touble keymaps
 	{ "<leader>D", group = "Diagnostics", icon = "" },
 	{ "<leader>Dx", ":Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
@@ -141,4 +154,13 @@ wk.add({
 	},
 	{ "<leader>DL", ":Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
 	{ "<leader>DQ", ":Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+	-- OpenCode
+	{ "<leader>o", group = "OpenCode" },
+	{
+		"<leader>o<Tab>",
+		function()
+			require("opencode").ask("@this: ")
+		end,
+		desc = "Opencode: Ask",
+	},
 })

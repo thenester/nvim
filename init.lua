@@ -19,6 +19,7 @@ vim.o.winborder = "rounded"
 vim.o.undofile = true
 vim.opt.listchars:append({ space = "·" })
 vim.opt.clipboard:append("unnamedplus") -- system clipboard
+vim.opt.maxmempattern=2000000
 
 vim.diagnostic.config({ virtual_text = { current_line = true } })
 
